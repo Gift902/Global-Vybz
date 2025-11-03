@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .drop-shadow-neon {
+    text-shadow: 0 0 4px #ff3c96, 0 0 10px #ff3c96, 0 0 20px #ff3c96;
+  }
+
+  .text-neon-pink {
+    color: #ff3c96;
+  }
+
+  .text-neon-blue {
+    color: #0ff;
+  }
+
+  .hover\:bg-neon-blue\/20:hover {
+    background-color: rgba(0, 255, 255, 0.2);
+  }
+
+  .bg-neon-pink\/30 {
+    background-color: rgba(255, 60, 150, 0.3);
+  }
+
+  .text-soft-pink {
+    color: #ff8cb3; /* softer, less intense pink */
+  }
+
+  .drop-shadow-soft-pink {
+    text-shadow: 0 0 2px #ff8cb3, 0 0 5px #ff8cb3;
+  }
+
+  .bg-soft-pink\/20 {
+    background-color: rgba(255, 140, 179, 0.2);
+  }
+
+  .drop-shadow-neon {
+    text-shadow: 0 0 4px #0ff, 0 0 8px #0ff, 0 0 12px #0ff;
+  }
+
+  .drop-shadow-soft-neon {
+    text-shadow: 0 0 2px #ff8cb3, 0 0 5px #ff8cb3;
+  }
+
+  .text-soft-neon-pink {
+    color: #ff8cb3;
+  }
+
+  .bg-soft-neon-blue\/40 {
+    background-color: rgba(0, 255, 255, 0.4);
+  }
+
+  .hover\:bg-soft-neon-blue\/60:hover {
+    background-color: rgba(0, 255, 255, 0.6);
+  }
+
+  .text-sweet-white {
+    color: #ffffff;
+  }
+}
+
+
