@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import api from './lib/axios.js';
 import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
@@ -13,7 +13,7 @@ const Admin = () => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:5001/api/admin/login", {
+      const res = await api.post("admin/login", {
         username,
         password,
       });

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEdit, FiTrash2, FiSave, FiX } from "react-icons/fi";
 import formatDate from "../lib/utils";
-import axios from "axios";
+import api from './lib/axios.js';
 import toast from "react-hot-toast";
 
 const PostCard = ({ post, onDelete, onUpdate }) => {
@@ -14,7 +14,7 @@ const PostCard = ({ post, onDelete, onUpdate }) => {
     if (!window.confirm("Are you sure you want to delete this post?")) return;
 
     try {
-      await axios.delete(`http://localhost:5001/api/posts/${post._id}`);
+      await api.delete(`/posts/${post._id}`);
       toast.success("Post deleted successfully!");
       onDelete(post._id); // Update parent state
     } catch (error) {
@@ -31,7 +31,7 @@ const PostCard = ({ post, onDelete, onUpdate }) => {
 
     setLoading(true);
     try {
-      const res = await axios.put(`http://localhost:5001/api/posts/${post._id}`, {
+      const res = await api.put(`/posts/${post._id}`, {
         title,
         description,
       });

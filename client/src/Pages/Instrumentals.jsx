@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from './lib/axios.js';
 import formatDate from "../lib/utils";
 
 const Instrumentals = () => {
@@ -9,7 +9,7 @@ const Instrumentals = () => {
   useEffect(() => {
     const fetchInstrumentals = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/instrumentals");
+        const res = await api.get("/instrumentals");
         setInstrumentals(res.data);
       } catch (error) {
         console.log("Error fetching instrumentals", error);

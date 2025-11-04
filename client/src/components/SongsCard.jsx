@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEdit, FiTrash2, FiSave, FiX } from "react-icons/fi";
 import formatDate from "../lib/utils";
-import axios from "axios";
+import api from './lib/axios.js';
 import toast from "react-hot-toast";
 
 const SongsCard = ({ song, onDelete, onUpdate }) => {
@@ -14,7 +14,7 @@ const SongsCard = ({ song, onDelete, onUpdate }) => {
   // 🟥 Delete Song
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5001/api/songs/${song._id}`);
+      await api.delete(`/songs/${song._id}`);
       toast.success("Song deleted successfully!");
       onDelete(song._id);
     } catch (error) {
@@ -37,8 +37,8 @@ const SongsCard = ({ song, onDelete, onUpdate }) => {
       formData.append("description", description);
       if (file) formData.append("audio", file); // must match backend field
 
-      const res = await axios.put(
-        `http://localhost:5001/api/songs/${song._id}`,
+      const res = await api.put(
+        `/songs/${song._id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

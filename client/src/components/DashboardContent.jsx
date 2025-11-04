@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from './lib/axios.js';
 import Posts from "./Posts";
 import Songs from "./Songs";
 import Instrumentals from "./Instrumentals";
@@ -22,7 +22,7 @@ const DashboardContent = ({ section }) => {
       setLoading(true);
       try {
         if (section === "posts") {
-          const res = await axios.get("http://localhost:5001/api/posts");
+          const res = await api.get("/posts");
           // Ensure imageUrl is passed
           const updatedPosts = res.data.map((post) => ({
             ...post,
@@ -30,7 +30,7 @@ const DashboardContent = ({ section }) => {
           }));
           setPosts(updatedPosts);
         } else if (section === "songs") {
-          const res = await axios.get("http://localhost:5001/api/songs");
+          const res = await api.get("/songs");
           // Ensure audioUrl is passed
           const updatedSongs = res.data.map((song) => ({
             ...song,
@@ -38,7 +38,7 @@ const DashboardContent = ({ section }) => {
           }));
           setSongs(updatedSongs);
         } else if (section === "instrumentals") {
-          const res = await axios.get("http://localhost:5001/api/instrumentals");
+          const res = await api.get("/instrumentals");
           // Ensure fileUrl is passed
           const updatedInstrumentals = res.data.map((instr) => ({
             ...instr,

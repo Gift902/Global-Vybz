@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import toast from 'react-hot-toast';
-import axios from 'axios';
+import api from './lib/axios.js';
 
 const Posts = ({ addPost }) => {
   const [title, setTitle] = useState("");
@@ -35,7 +35,7 @@ const Posts = ({ addPost }) => {
       formData.append("description", description);
       if (file) formData.append("file", file);
 
-      const res = await axios.post("http://localhost:5001/api/posts", formData, {
+      const res = await api.post("/posts", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

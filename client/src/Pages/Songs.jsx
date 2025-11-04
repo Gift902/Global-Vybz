@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import api from './lib/axios.js';
 import formatDate from "../lib/utils";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 
@@ -10,7 +10,7 @@ const Songs = () => {
   useEffect(() => {
     const fetchSongs = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/songs");
+        const res = await api.get("/songs");
         console.log(res.data);
         setSongs(res.data);
       } catch (error) {

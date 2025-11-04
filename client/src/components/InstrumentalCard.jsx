@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEdit, FiTrash2, FiSave, FiX } from "react-icons/fi";
 import formatDate from "../lib/utils";
-import axios from "axios";
+import api from './lib/axios.js';
 import toast from "react-hot-toast";
 
 const InstrumentalCard = ({ instrumental, onDelete, onUpdate }) => {
@@ -14,7 +14,7 @@ const InstrumentalCard = ({ instrumental, onDelete, onUpdate }) => {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:5001/api/instrumentals/${instrumental._id}`);
+      await api.delete(`/instrumentals/${instrumental._id}`);
       toast.success("Instrumental deleted successfully!");
       onDelete(instrumental._id);
     } catch (error) {
@@ -36,8 +36,8 @@ const InstrumentalCard = ({ instrumental, onDelete, onUpdate }) => {
       formData.append("description", description);
       if (file) formData.append("file", file);
 
-      const res = await axios.put(
-        `http://localhost:5001/api/instrumentals/${instrumental._id}`,
+      const res = await api.put(
+        `/instrumentals/${instrumental._id}`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );

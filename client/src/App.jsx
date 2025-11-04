@@ -11,6 +11,7 @@ import DashboardSidebar from './components/DashboardSidebar';
 import DashboardHeader from './components/DashboardHeader';
 import DashboardContent from './components/DashboardContent';
 import ProtectedRoute from "./components/ProtectedRoutes";
+import api from './lib/axios.js';
 
 function App() {
   return (

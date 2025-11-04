@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import api from './lib/axios.js';
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import formatDate from "../lib/utils";
 
@@ -13,7 +13,7 @@ const Home = () => {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const res = await axios.get("http://localhost:5001/api/posts");
+        const res = await api.get("/posts");
         console.log(res.data);
         setPosts(res.data);
       } catch (error) {

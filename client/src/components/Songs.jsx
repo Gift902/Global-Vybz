@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import axios from "axios";
+import api from './lib/axios.js';
 
 const Songs = ({ addSong }) => {
   const [title, setTitle] = useState("");
@@ -38,7 +38,7 @@ const Songs = ({ addSong }) => {
       formData.append("description", description);
       formData.append("file", file); // <-- matches backend multer field
 
-      const res = await axios.post("http://localhost:5001/api/songs", formData, {
+      const res = await api.post("/songs", formData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 
