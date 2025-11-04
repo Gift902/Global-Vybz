@@ -18,7 +18,7 @@ const Contact = () => {
       {/* Main Card */}
       <div className="max-w-5xl w-full bg-gray-800/60 backdrop-blur-lg rounded-2xl shadow-xl flex flex-col md:flex-row items-center md:items-start p-6 sm:p-8 gap-8 mt-4">
         {/* Left Side: Image */}
-        <div className="w- h-140 md:w-1/2 flex justify-center">
+        <div className="w- h-100 md:w-1/2 flex justify-center">
           <img
             src={studioImage}
             alt="Studio"
@@ -83,7 +83,7 @@ const Contact = () => {
             <FaInstagram />
           </a>
           <a
-            href="mailto:globalvybz@gmail.com"
+            href="mailto:julesjulesce@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-red-400 transition-colors"

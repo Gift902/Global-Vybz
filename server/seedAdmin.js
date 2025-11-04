@@ -16,8 +16,8 @@ const createAdmin = async () => {
       process.exit(0);
     }
 
-    const hashedPassword = await bcrypt.hash("YourStrongPassword123", 10);
-    await Admin.create({ username: "admin", password: hashedPassword });
+    const hashedPassword = await bcrypt.hash("Music@2025", 10);
+    await Admin.create({ username: "popiyeeh", password: hashedPassword });
 
     console.log("✅ Admin created successfully!");
     process.exit(0);
