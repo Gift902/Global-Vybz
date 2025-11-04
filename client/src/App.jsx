@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Home from "./Pages/Home";
-import Instrumentals from "./pages/Instrumentals";
+import Instrumentals from "./Pages/Instrumentals";
 import Songs from "./Pages/Songs";
 import BookSession from "./Pages/BookSession";
 import Admin from "./Pages/Admin";
