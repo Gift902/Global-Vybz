@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import api from './lib/axios.js';
+import api from '../lib/axios';
 import { useNavigate } from "react-router-dom";
 
 const Admin = () => {
