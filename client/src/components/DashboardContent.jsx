@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import api from './lib/axios.js';
+import api from '../lib/axios.js';
 import Posts from "./Posts";
 import Songs from "./Songs";
 import Instrumentals from "./Instrumentals";

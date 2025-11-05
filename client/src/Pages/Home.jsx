@@ -2,7 +2,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
-import api from './lib/axios.js';
+import api from '../lib/axios.js';
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 import formatDate from "../lib/utils";
 

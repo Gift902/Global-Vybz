@@ -1,6 +1,6 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
-import api from './lib/axios.js';
+import api from '../lib/axios.js';
 
 const Songs = ({ addSong }) => {
   const [title, setTitle] = useState("");

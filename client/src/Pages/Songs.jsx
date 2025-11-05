@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import api from './lib/axios.js';
+import api from '../lib/axios.js';
 import formatDate from "../lib/utils";
 import { FiEdit, FiTrash2 } from "react-icons/fi";
 

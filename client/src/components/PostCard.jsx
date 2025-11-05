@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEdit, FiTrash2, FiSave, FiX } from "react-icons/fi";
 import formatDate from "../lib/utils";
-import api from './lib/axios.js';
+import api from '../lib/axios.js';
 import toast from "react-hot-toast";
 
 const PostCard = ({ post, onDelete, onUpdate }) => {
